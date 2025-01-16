@@ -1,0 +1,42 @@
+<!-- Use stable and unique IDs!-->
+<core:FragmentDefinition id="IdBTCustFrag" xmlns:core='sap.ui.core' xmlns='sap.m' xmlns:uxap='sap.uxap'>
+    <uxap:ObjectPageSubSection id="BkTypSubSectCust" title="{i18n>bktyp.cust}" mode="Expanded" titleUppercase="false">
+        <Table id="IdBkTypCustTab" items="{path: 'ZC_PARTNER_MDG>to_CustomerBankType'}" mode="SingleSelectLeft"
+            width="70%">
+            <headerToolbar>
+                <OverflowToolbar id="IdBkTCToolB">
+                    <Title id="IdTitTabC" text="{i18n>bktyp.bktyp}" level="H2" />
+                    <ToolbarSpacer id="IdBkTCToolBS" />
+                    <Button id="IdkTyCAdd" text="{i18n>CREATE_OBJECT}" visible="{uiExt>editable}"
+                        press=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onBkTyCAdd" />
+                    <Button id="IdkTyCDel" text="{i18n>DELETE}" visible="{uiExt>editable}"
+                        press=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onItemDel" />
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column id="IdBkCC04">
+                    <Text id="IdBkCT04" text="{i18n>bktyp.bktyp}" />
+                </Column>
+                <Column id="IdBkCC01">
+                    <Text id="IdBkCT01" text="{i18n>bktyp.comp}" />
+                </Column>
+                <Column id="IdBkCC02">
+                    <Text id="IdBkCT02" text="{i18n>bktyp.pr}" />
+                </Column>
+                <Column id="IdBkCC03">
+                    <Text id="IdBkCT03" text="{i18n>bktyp.curr}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="IdBkCustItem" vAlign="Middle">
+                    <cells>
+                        <Text id="IdBkCTyp" text="{ZC_PARTNER_MDG>BankType}" />
+                        <Text id="IdBkCComp" text="{ZC_PARTNER_MDG>CompanyCodeName} ({ZC_PARTNER_MDG>CompanyCode})" />
+                        <Text id="IdBkCPrc" text="{ZC_PARTNER_MDG>ProfitCenter}" />
+                        <Text id="IdBkCWae" text="{ZC_PARTNER_MDG>Currency}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </uxap:ObjectPageSubSection>
+</core:FragmentDefinition>

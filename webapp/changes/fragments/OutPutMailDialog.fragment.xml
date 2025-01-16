@@ -1,0 +1,41 @@
+  <!-- enabled="{ModelVue>/enable}" -->
+  <core:FragmentDefinition id="IdOMDialogFrag" xmlns:core='sap.ui.core' xmlns='sap.m' xmlns:form="sap.ui.layout.form"
+      xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartfield="sap.ui.comp.smartfield">
+      <Dialog id="IdOMDialog" showHeader="false">
+          <customHeader>
+              <Toolbar>
+                  <Label text="{i18n>outm.title}" design="Bold" />
+                  <ToolbarSpacer />
+                  <Button id="IdOMCancel" icon="sap-icon://sys-cancel" type="Reject" press="onDialogClose" />
+              </Toolbar>
+          </customHeader>
+          <content>
+              <smartForm:SmartForm id="IdOutMailSF" editable="true">
+                  <smartForm:Group>
+                      <smartForm:GroupElement>
+                          <smartfield:SmartField value="{OutputDoc}" />
+                      </smartForm:GroupElement>
+                      <smartForm:GroupElement>
+                          <smartfield:SmartField value="{CompanyCode}" />
+                      </smartForm:GroupElement>                      
+                      <smartForm:GroupElement>
+                          <smartfield:SmartField value="{Mail}" />
+                      </smartForm:GroupElement>
+                      <smartForm:GroupElement>
+                          <smartfield:SmartField value="{Notes}" />
+                      </smartForm:GroupElement>
+                  </smartForm:Group>
+              </smartForm:SmartForm>
+          </content>
+          <footer>
+              <Toolbar id="IdOMBar">
+                  <Button id="IdOMPopMsg" icon="sap-icon://message-popup" press="handleMessagePopoverPress"
+                      type="{= (${message>/}.length > 0 ? 'Negative':'Default')}" text="{=${message>/}.length}" />
+                  <ToolbarSpacer />
+                  <Button id="IdOMVal" text="{i18n>bktyp.valid}" icon="sap-icon://accept" type="Accept"
+                      press="onOMSave" />
+              </Toolbar>
+          </footer>
+      </Dialog>
+  </core:FragmentDefinition>
+  

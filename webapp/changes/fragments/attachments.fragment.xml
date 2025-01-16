@@ -1,0 +1,5 @@
+<!-- Use stable and unique IDs!-->
+<core:FragmentDefinition id="fragfileext" xmlns:core='sap.ui.core' xmlns:m='sap.m'>
+	<core:Fragment id="IdFragFileMng" type="XML"
+		fragmentName="customer.app.mdm.mdg.gov.bps1.ext.changes.fragments.FilesMng" />
+</core:FragmentDefinition>

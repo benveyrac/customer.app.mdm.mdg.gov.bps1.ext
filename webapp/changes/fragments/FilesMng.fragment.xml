@@ -1,0 +1,33 @@
+ <core:FragmentDefinition id="IdFilesMng" xmlns:core='sap.ui.core' xmlns:m='sap.m' xmlns="sap.m.upload">
+     <UploadSet id="UploadSet.ext" instantUpload="true" showIcons="true" uploadEnabled="{uiExt>upload}" multiple="false"
+         mode="Delete"
+         beforeUploadStarts=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onBeforeUploadStartsExt"
+         uploadCompleted=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onUploadCompletedExt"
+         afterItemRemoved=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onAfterRemoveFileExt"
+         items="{path: 'ZC_PARTNER_MDG>to_Attachment' , events: { dataReceived: '.extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onFilesReceivedExt' }}"
+         uploadUrl="/sap/opu/odata/sap/ZMDG_DATA_SRV/FileSet"
+         modelContextChange=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.getUploadSetId">
+         <toolbar>
+             <m:OverflowToolbar id="UpSetToolBar.ext">
+                 <m:Title id="UpSetTit.ext" text="Documents" level="H2" />
+                 <m:ToolbarSpacer id="UpSetSpacer.ext" />
+                 <m:ComboBox id="ComboType.ext" items="{path: 'customer.mdgextend>/FileTypeSet'}"
+                     change=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onSelectTypeExt"
+                     visible="{uiExt>editable}">
+                     <core:Item id="ComboItem.ext" key="{customer.mdgextend>Type}"
+                         text="{customer.mdgextend>Description}" />
+                 </m:ComboBox>
+             </m:OverflowToolbar>
+         </toolbar>
+         <items>
+             <UploadSetItem id="UpSetItem.ext" fileName="{ZC_PARTNER_MDG>Filename}"
+                 mediaType="{ZC_PARTNER_MDG>Mimetype}" enabledEdit="false" visibleEdit="false"
+                 url="{ZC_PARTNER_MDG>Url}">
+                 <statuses>
+                     <m:ObjectStatus id="UpSetStatus.ext" title="{ZC_PARTNER_MDG>Type}"
+                         text="{ZC_PARTNER_MDG>TypeDesc}" />
+                 </statuses>
+             </UploadSetItem>
+         </items>
+     </UploadSet>
+ </core:FragmentDefinition>

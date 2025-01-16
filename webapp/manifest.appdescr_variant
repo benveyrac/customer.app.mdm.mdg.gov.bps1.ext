@@ -1,0 +1,87 @@
+{
+  "fileName": "manifest",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "appdescr_variant",
+  "reference": "mdm.mdg.gov.bps1",
+  "id": "customer.app.mdm.mdg.gov.bps1.ext",
+  "namespace": "apps/mdm.mdg.gov.bps1/appVariants/customer.app.mdm.mdg.gov.bps1.ext/",
+  "version": "0.1.0",
+  "content": [
+    {
+    "changeType": "appdescr_ui5_addNewModelEnhanceWith",
+    "content": {
+        "modelId": "i18n"
+    },
+    "texts": {
+        "i18n": "i18n/i18n.properties"
+    }
+},
+    {
+    "changeType": "appdescr_ui5_addNewModelEnhanceWith",
+    "content": {
+        "modelId": "@i18n"
+    },
+    "texts": {
+        "i18n": "i18n/i18n.properties"
+    }
+},
+    {
+    "changeType": "appdescr_ui5_addNewModelEnhanceWith",
+    "content": {
+        "modelId": "i18n|sap.suite.ui.generic.template.ListReport|BusinessPartner"
+    },
+    "texts": {
+        "i18n": "i18n/ListReport/BusinessPartner/i18n.properties"
+    }
+},
+    {
+    "changeType": "appdescr_ui5_addNewModelEnhanceWith",
+    "content": {
+        "modelId": "i18n|sap.suite.ui.generic.template.ObjectPage|BusinessPartner"
+    },
+    "texts": {
+        "i18n": "i18n/ObjectPage/BusinessPartner/i18n.properties"
+    }
+},
+    {
+    "changeType": "appdescr_ui5_addNewModelEnhanceWith",
+    "content": {
+        "modelId": "i18n|sap.suite.ui.generic.template.ObjectPage|BusinessPartnerAddress"
+    },
+    "texts": {
+        "i18n": "i18n/ObjectPage/BusinessPartnerAddress/i18n.properties"
+    }
+},
+    {
+    "changeType": "appdescr_ui5_addNewModelEnhanceWith",
+    "content": {
+        "modelId": "i18n|sap.suite.ui.generic.template.ObjectPage|BusinessPartnerBank"
+    },
+    "texts": {
+        "i18n": "i18n/ObjectPage/BusinessPartnerBank/i18n.properties"
+    }
+},
+    {
+    "changeType": "appdescr_ui5_addNewModelEnhanceWith",
+    "content": {
+        "modelId": "i18n|sap.suite.ui.generic.template.ObjectPage|DuplicateCheck"
+    },
+    "texts": {
+        "i18n": "i18n/ObjectPage/DuplicateCheck/i18n.properties"
+    }
+},
+    {
+    "changeType": "appdescr_ui5_setMinUI5Version",
+    "content": {
+        "minUI5Version": "1.120.0"
+    }
+},
+    {
+      "changeType": "appdescr_app_setTitle",
+      "content": {},
+      "texts": {
+        "i18n": "i18n/i18n.properties"
+      }
+    }
+  ]
+}

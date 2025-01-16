@@ -1,0 +1,107 @@
+<!-- Use stable and unique IDs!-->
+<core:FragmentDefinition id="IdAddVendFrag" xmlns:core='sap.ui.core' xmlns='sap.m' xmlns:uxap='sap.uxap'>
+    <uxap:ObjectPageSubSection id="BkTypSubSectVend" title="{i18n>bktyp.vend}" mode="Expanded" titleUppercase="false">
+        <Table id="IdBkTypVendTab" items="{path: 'ZC_PARTNER_MDG>to_VendorBankType'}" mode="SingleSelectLeft"
+            width="70%">
+            <headerToolbar>
+                <OverflowToolbar id="IdBkTVToolB">
+                    <Title id="IdTitTabV" text="{i18n>bktyp.bktyp}" level="H2" />
+                    <ToolbarSpacer id="IdBkTVToolBS" />
+                    <Button id="IdkTyVAdd" text="{i18n>CREATE_OBJECT}" visible="{uiExt>editable}"
+                        press=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onBkTyVAdd" />
+                    <Button id="IdkTyVDel" text="{i18n>DELETE}" visible="{uiExt>editable}"
+                        press=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onItemDel" />
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column id="IdBkVC04">
+                    <Text id="IdBkVT04" text="{i18n>bktyp.bktyp}" />
+                </Column>
+                <Column id="IdBkVC01">
+                    <Text id="IdBkVT01" text="{i18n>bktyp.comp}" />
+                </Column>
+                <Column id="IdBkVC02">
+                    <Text id="IdBkVT02" text="{i18n>bktyp.pr}" />
+                </Column>
+                <Column id="IdBkVC03">
+                    <Text id="IdBkVT03" text="{i18n>bktyp.curr}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="IdBkVendItem" vAlign="Middle">
+                    <cells>
+                        <Text id="IdBkVTyp" text="{ZC_PARTNER_MDG>BankType}" />
+                        <Text id="IdBkVComp" text="{ZC_PARTNER_MDG>CompanyCodeName} ({ZC_PARTNER_MDG>CompanyCode})" />
+                        <Text id="IdBkVPrc" text="{ZC_PARTNER_MDG>ProfitCenter}" />
+                        <Text id="IdBkVWae" text="{ZC_PARTNER_MDG>Currency}" />                        
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </uxap:ObjectPageSubSection>
+
+    <uxap:ObjectPageSubSection id="ReadSoftSectVend" title="{i18n>read.title}" mode="Expanded" titleUppercase="false">
+        <Table id="IdReadSoftVendTab" items="{path: 'ZC_PARTNER_MDG>to_VendorReadSoft'}" mode="SingleSelectLeft"
+            width="100%">
+            <headerToolbar>
+                <OverflowToolbar id="IdRSVToolB">
+                    <Title id="IdTitTabRSV" text="{i18n>read.acc}" level="H2" />
+                    <ToolbarSpacer id="IdRSVToolBS" />
+                    <Button id="IdRSVAdd" text="{i18n>CREATE_OBJECT}" visible="{uiExt>editable}"
+                        press=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onRSVAdd" />
+                    <Button id="IdRSVDel" text="{i18n>DELETE}" visible="{uiExt>editable}"
+                        press=".extension.customer.app.mdm.mdg.gov.bps1.ext.mdgextension001.onItemDel" />
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column id="IdRSVC01">
+                    <Text id="IdRSVT01" text="{i18n>read.comp}" />
+                </Column>
+                <Column id="IdRSVC02">
+                    <Text id="IdRSVT02" text="{i18n>read.doctyp}" />
+                </Column>
+                <Column id="IdRSVC03">
+                    <Text id="IdRSVT03" text="{i18n>read.pr}" />
+                </Column>
+                <Column id="IdRSVC04">
+                    <Text id="IdRSVT04" text="{i18n>read.accgl}" />
+                </Column>
+                <Column id="IdRSVC05">
+                    <Text id="IdRSVT05" text="{i18n>read.cost}" />
+                </Column>
+                <Column id="IdRSVC06">
+                    <Text id="IdRSVT06" text="{i18n>read.order}" />
+                </Column>
+                <Column id="IdRSVC07">
+                    <Text id="IdRSVT07" text="{i18n>read.expvend}" />
+                </Column>
+                <Column id="IdRSVC08">
+                    <Text id="IdRSVT08" text="{i18n>read.tax}" />
+                </Column>
+                <Column id="IdRSVC09">
+                    <Text id="IdRSVT09" text="{i18n>read.accass}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="IdReadSoftVItem" vAlign="Middle">
+                    <cells>
+                        <Text id="IdRSVComp" text="{ZC_PARTNER_MDG>CompanyCode} ({ZC_PARTNER_MDG>CompanyCodeName})" />
+                        <Text id="IdRSVDoc" text="{ZC_PARTNER_MDG>DocTypeDesc} ({ZC_PARTNER_MDG>CpDocType})" />
+                        <Text id="IdRSVPrfCent" text="{ZC_PARTNER_MDG>ProfitCenter}" />
+                        <Text id="IdRSVAcc" text="{ZC_PARTNER_MDG>GLAccountName} ({ZC_PARTNER_MDG>Account})"
+                            visible="{=!!${ZC_PARTNER_MDG>Account} &amp;&amp; ${ZC_PARTNER_MDG>Account} !== '' ? true:false }" />
+                        <Text id="IdRSVCost" text="{ZC_PARTNER_MDG>CostCenterName} ({ZC_PARTNER_MDG>CostCenter})"
+                            visible="{=!!${ZC_PARTNER_MDG>CostCenter} &amp;&amp; ${ZC_PARTNER_MDG>CostCenter} !== '' ? true:false }" />
+                        <Text id="IdRSVOrd" text="{ZC_PARTNER_MDG>OrderDescription} ({ZC_PARTNER_MDG>OrderId})"
+                            visible="{=!!${ZC_PARTNER_MDG>OrderId} &amp;&amp; ${ZC_PARTNER_MDG>OrderId} !== '' ? true:false }" />
+                        <CheckBox id="IdRSVExpVen" selected="{ZC_PARTNER_MDG>ExpressVendor}" enabled="false" />
+                        <!-- <Text id="IdRSVTxCod" text="{ZC_PARTNER_MDG>TaxCodeName} ({ZC_PARTNER_MDG>TxCode})" /> -->
+                        <Text id="IdRSVTxCod" text="{ZC_PARTNER_MDG>TxCode}" />
+                        <Text id="IdRSVAccAss" text="{ZC_PARTNER_MDG>AccAssignTempTxt} ({ZC_PARTNER_MDG>AccAssignment})"
+                            visible="{=!!${ZC_PARTNER_MDG>AccAssignment} &amp;&amp; ${ZC_PARTNER_MDG>AccAssignment} !== '' ? true:false }" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </uxap:ObjectPageSubSection>
+</core:FragmentDefinition>
